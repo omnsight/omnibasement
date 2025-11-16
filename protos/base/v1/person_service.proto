@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package base.v1;
+
+import "model/v1/osint.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";  
+
+// PersonService provides operations for managing persons
+service PersonService {
+  rpc GetPerson(GetPersonRequest) returns (GetPersonResponse) {
+    option (google.api.http) = {
+      get: "/v1/persons/{key}"
+    };
+  }
+
+  rpc CreatePerson(CreatePersonRequest) returns (CreatePersonResponse) {
+    option (google.api.http) = {
+      post: "/v1/persons"
+      body: "person"
+    };
+  }
+
+  rpc UpdatePerson(UpdatePersonRequest) returns (UpdatePersonResponse) {
+    option (google.api.http) = {
+      put: "/v1/persons/{key}"
+      body: "person"
+    };
+  }
+
+  rpc DeletePerson(DeletePersonRequest) returns (DeletePersonResponse) {
+    option (google.api.http) = {
+      delete: "/v1/persons/{key}"
+    };
+  }
+}
+
+// Person messages
+message GetPersonRequest {
+  string key = 1;
+}
+
+message GetPersonResponse {
+  model.v1.Person person = 1;
+}
+
+message CreatePersonRequest {
+  model.v1.Person person = 1;
+}
+
+message CreatePersonResponse {
+  model.v1.Person person = 1;
+}
+
+message UpdatePersonRequest {
+  string key = 1;
+  model.v1.Person person = 2;
+}
+
+message UpdatePersonResponse {
+  model.v1.Person person = 1;
+}
+
+message DeletePersonRequest {
+  string key = 1;
+}
+
+message DeletePersonResponse {
+}
