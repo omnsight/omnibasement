@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package base.v1;
+
+import "model/v1/osint.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
+
+// WebsiteService provides operations for managing websites
+service WebsiteService {
+  rpc GetWebsite(GetWebsiteRequest) returns (GetWebsiteResponse) {
+    option (google.api.http) = {
+      get: "/v1/websites/{key}"
+    };
+  }
+
+  rpc CreateWebsite(CreateWebsiteRequest) returns (CreateWebsiteResponse) {
+    option (google.api.http) = {
+      post: "/v1/websites"
+      body: "website"
+    };
+  }
+
+  rpc UpdateWebsite(UpdateWebsiteRequest) returns (UpdateWebsiteResponse) {
+    option (google.api.http) = {
+      put: "/v1/websites/{key}"
+      body: "website"
+    };
+  }
+
+  rpc DeleteWebsite(DeleteWebsiteRequest) returns (DeleteWebsiteResponse) {
+    option (google.api.http) = {
+      delete: "/v1/websites/{key}"
+    };
+  }
+}
+
+// Website messages
+message GetWebsiteRequest {
+  string key = 1;
+}
+
+message GetWebsiteResponse {
+  model.v1.Website website = 1;
+}
+
+message CreateWebsiteRequest {
+  model.v1.Website website = 1;
+}
+
+message CreateWebsiteResponse {
+  model.v1.Website website = 1;
+}
+
+message UpdateWebsiteRequest {
+  string key = 1;
+  model.v1.Website website = 2;
+}
+
+message UpdateWebsiteResponse {
+  model.v1.Website website = 1;
+}
+
+message DeleteWebsiteRequest {
+  string key = 1;
+}
+
+message DeleteWebsiteResponse {
+}

@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package base.v1;
+
+import "model/v1/osint.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
+
+// RelationshipService provides operations for managing relationships between entities
+service RelationshipService {
+  rpc CreateRelationship(CreateRelationshipRequest) returns (CreateRelationshipResponse) {
+    option (google.api.http) = {
+      post: "/v1/relationships"
+      body: "relationship"
+    };
+  }
+
+  rpc UpdateRelationship(UpdateRelationshipRequest) returns (UpdateRelationshipResponse) {
+    option (google.api.http) = {
+      put: "/v1/relationships/{id}"
+      body: "relationship"
+    };
+  }
+
+  rpc DeleteRelationship(DeleteRelationshipRequest) returns (DeleteRelationshipResponse) {
+    option (google.api.http) = {
+      delete: "/v1/relationships/{id}"
+    };
+  }
+}
+
+// Relationship messages
+message CreateRelationshipRequest {
+  model.v1.Relation relationship = 1;
+}
+
+message CreateRelationshipResponse {
+  model.v1.Relation relationship = 1;
+}
+
+message UpdateRelationshipRequest {
+  string id = 1;
+  model.v1.Relation relationship = 2;
+}
+
+message UpdateRelationshipResponse {
+  model.v1.Relation relationship = 1;
+}
+
+message DeleteRelationshipRequest {
+  string id = 1;
+}
+
+message DeleteRelationshipResponse {
+}

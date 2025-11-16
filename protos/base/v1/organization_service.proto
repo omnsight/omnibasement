@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package base.v1;
+
+import "model/v1/osint.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
+
+// OrganizationService provides operations for managing organizations
+service OrganizationService {
+  rpc GetOrganization(GetOrganizationRequest) returns (GetOrganizationResponse) {
+    option (google.api.http) = {
+      get: "/v1/organizations/{key}"
+    };
+  }
+
+  rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse) {
+    option (google.api.http) = {
+      post: "/v1/organizations"
+      body: "organization"
+    };
+  }
+
+  rpc UpdateOrganization(UpdateOrganizationRequest) returns (UpdateOrganizationResponse) {
+    option (google.api.http) = {
+      put: "/v1/organizations/{key}"
+      body: "organization"
+    };
+  }
+
+  rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse) {
+    option (google.api.http) = {
+      delete: "/v1/organizations/{key}"
+    };
+  }
+}
+
+// Organization messages
+message GetOrganizationRequest {
+  string key = 1;
+}
+
+message GetOrganizationResponse {
+  model.v1.Organization organization = 1;
+}
+
+message CreateOrganizationRequest {
+  model.v1.Organization organization = 1;
+}
+
+message CreateOrganizationResponse {
+  model.v1.Organization organization = 1;
+}
+
+message UpdateOrganizationRequest {
+  string key = 1;
+  model.v1.Organization organization = 2;
+}
+
+message UpdateOrganizationResponse {
+  model.v1.Organization organization = 1;
+}
+
+message DeleteOrganizationRequest {
+  string key = 1;
+}
+
+message DeleteOrganizationResponse {
+}

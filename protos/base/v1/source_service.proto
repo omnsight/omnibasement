@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package base.v1;
+
+import "model/v1/osint.proto";
+import "google/api/annotations.proto";
+
+option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
+
+// SourceService provides operations for managing sources
+service SourceService {
+  rpc GetSource(GetSourceRequest) returns (GetSourceResponse) {
+    option (google.api.http) = {
+      get: "/v1/sources/{key}"
+    };
+  }
+
+  rpc CreateSource(CreateSourceRequest) returns (CreateSourceResponse) {
+    option (google.api.http) = {
+      post: "/v1/sources"
+      body: "source"
+    };
+  }
+
+  rpc UpdateSource(UpdateSourceRequest) returns (UpdateSourceResponse) {
+    option (google.api.http) = {
+      put: "/v1/sources/{key}"
+      body: "source"
+    };
+  }
+
+  rpc DeleteSource(DeleteSourceRequest) returns (DeleteSourceResponse) {
+    option (google.api.http) = {
+      delete: "/v1/sources/{key}"
+    };
+  }
+}
+
+// Source messages
+message GetSourceRequest {
+  string key = 1;
+}
+
+message GetSourceResponse {
+  model.v1.Source source = 1;
+}
+
+message CreateSourceRequest {
+  model.v1.Source source = 1;
+}
+
+message CreateSourceResponse {
+  model.v1.Source source = 1;
+}
+
+message UpdateSourceRequest {
+  string key = 1;
+  model.v1.Source source = 2;
+}
+
+message UpdateSourceResponse {
+  model.v1.Source source = 1;
+}
+
+message DeleteSourceRequest {
+  string key = 1;
+}
+
+message DeleteSourceResponse {
+}
