@@ -1,0 +1,1316 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Foundation API",
+    "description": "The Foundation API handles data for data CRUD operations.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Omni Team"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "tags": [
+    {
+      "name": "EventService"
+    },
+    {
+      "name": "OrganizationService"
+    },
+    {
+      "name": "PersonService"
+    },
+    {
+      "name": "RelationshipService"
+    },
+    {
+      "name": "SourceService"
+    },
+    {
+      "name": "WebsiteService"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/events": {
+      "post": {
+        "operationId": "EventService_CreateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "event",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Event"
+            }
+          }
+        ],
+        "tags": [
+          "EventService"
+        ]
+      }
+    },
+    "/v1/events/{key}": {
+      "get": {
+        "operationId": "EventService_GetEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EventService"
+        ]
+      },
+      "delete": {
+        "operationId": "EventService_DeleteEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "EventService"
+        ]
+      },
+      "put": {
+        "operationId": "EventService_UpdateEvent",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateEventResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "event",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Event"
+            }
+          }
+        ],
+        "tags": [
+          "EventService"
+        ]
+      }
+    },
+    "/v1/organizations": {
+      "post": {
+        "operationId": "OrganizationService_CreateOrganization",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateOrganizationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "organization",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Organization"
+            }
+          }
+        ],
+        "tags": [
+          "OrganizationService"
+        ]
+      }
+    },
+    "/v1/organizations/{key}": {
+      "get": {
+        "operationId": "OrganizationService_GetOrganization",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetOrganizationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OrganizationService"
+        ]
+      },
+      "delete": {
+        "operationId": "OrganizationService_DeleteOrganization",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteOrganizationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "OrganizationService"
+        ]
+      },
+      "put": {
+        "operationId": "OrganizationService_UpdateOrganization",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateOrganizationResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "organization",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Organization"
+            }
+          }
+        ],
+        "tags": [
+          "OrganizationService"
+        ]
+      }
+    },
+    "/v1/persons": {
+      "post": {
+        "operationId": "PersonService_CreatePerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreatePersonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Person"
+            }
+          }
+        ],
+        "tags": [
+          "PersonService"
+        ]
+      }
+    },
+    "/v1/persons/{key}": {
+      "get": {
+        "operationId": "PersonService_GetPerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetPersonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "PersonService"
+        ]
+      },
+      "delete": {
+        "operationId": "PersonService_DeletePerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeletePersonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "PersonService"
+        ]
+      },
+      "put": {
+        "operationId": "PersonService_UpdatePerson",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdatePersonResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "person",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Person"
+            }
+          }
+        ],
+        "tags": [
+          "PersonService"
+        ]
+      }
+    },
+    "/v1/relationships": {
+      "post": {
+        "operationId": "RelationshipService_CreateRelationship",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateRelationshipResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "relationship",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Relation"
+            }
+          }
+        ],
+        "tags": [
+          "RelationshipService"
+        ]
+      }
+    },
+    "/v1/relationships/{id}": {
+      "delete": {
+        "operationId": "RelationshipService_DeleteRelationship",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteRelationshipResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "RelationshipService"
+        ]
+      },
+      "put": {
+        "operationId": "RelationshipService_UpdateRelationship",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateRelationshipResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "relationship",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Relation"
+            }
+          }
+        ],
+        "tags": [
+          "RelationshipService"
+        ]
+      }
+    },
+    "/v1/sources": {
+      "post": {
+        "operationId": "SourceService_CreateSource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateSourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "source",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Source"
+            }
+          }
+        ],
+        "tags": [
+          "SourceService"
+        ]
+      }
+    },
+    "/v1/sources/{key}": {
+      "get": {
+        "operationId": "SourceService_GetSource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetSourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SourceService"
+        ]
+      },
+      "delete": {
+        "operationId": "SourceService_DeleteSource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteSourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "SourceService"
+        ]
+      },
+      "put": {
+        "operationId": "SourceService_UpdateSource",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateSourceResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "source",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Source"
+            }
+          }
+        ],
+        "tags": [
+          "SourceService"
+        ]
+      }
+    },
+    "/v1/websites": {
+      "post": {
+        "operationId": "WebsiteService_CreateWebsite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1CreateWebsiteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "website",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Website"
+            }
+          }
+        ],
+        "tags": [
+          "WebsiteService"
+        ]
+      }
+    },
+    "/v1/websites/{key}": {
+      "get": {
+        "operationId": "WebsiteService_GetWebsite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1GetWebsiteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WebsiteService"
+        ]
+      },
+      "delete": {
+        "operationId": "WebsiteService_DeleteWebsite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1DeleteWebsiteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "WebsiteService"
+        ]
+      },
+      "put": {
+        "operationId": "WebsiteService_UpdateWebsite",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/v1UpdateWebsiteResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "key",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "website",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/v1Website"
+            }
+          }
+        ],
+        "tags": [
+          "WebsiteService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1CreateEventResponse": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1CreateOrganizationResponse": {
+      "type": "object",
+      "properties": {
+        "organization": {
+          "$ref": "#/definitions/v1Organization"
+        }
+      }
+    },
+    "v1CreatePersonResponse": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/v1Person"
+        }
+      }
+    },
+    "v1CreateRelationshipResponse": {
+      "type": "object",
+      "properties": {
+        "relationship": {
+          "$ref": "#/definitions/v1Relation"
+        }
+      }
+    },
+    "v1CreateSourceResponse": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/definitions/v1Source"
+        }
+      }
+    },
+    "v1CreateWebsiteResponse": {
+      "type": "object",
+      "properties": {
+        "website": {
+          "$ref": "#/definitions/v1Website"
+        }
+      }
+    },
+    "v1DeleteEventResponse": {
+      "type": "object"
+    },
+    "v1DeleteOrganizationResponse": {
+      "type": "object"
+    },
+    "v1DeletePersonResponse": {
+      "type": "object"
+    },
+    "v1DeleteRelationshipResponse": {
+      "type": "object"
+    },
+    "v1DeleteSourceResponse": {
+      "type": "object"
+    },
+    "v1DeleteWebsiteResponse": {
+      "type": "object"
+    },
+    "v1Event": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Common data\n@gotags: json:\"_id,omitempty\""
+        },
+        "key": {
+          "type": "string",
+          "title": "@gotags: json:\"_key,omitempty\""
+        },
+        "rev": {
+          "type": "string",
+          "title": "@gotags: json:\"_rev,omitempty\""
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "location": {
+          "$ref": "#/definitions/v1LocationData",
+          "title": "Main Data"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "happenedAt": {
+          "type": "string",
+          "format": "int64",
+          "title": "Time data"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Additional"
+        }
+      }
+    },
+    "v1GetEventResponse": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1GetOrganizationResponse": {
+      "type": "object",
+      "properties": {
+        "organization": {
+          "$ref": "#/definitions/v1Organization"
+        }
+      }
+    },
+    "v1GetPersonResponse": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/v1Person"
+        }
+      }
+    },
+    "v1GetSourceResponse": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/definitions/v1Source"
+        }
+      }
+    },
+    "v1GetWebsiteResponse": {
+      "type": "object",
+      "properties": {
+        "website": {
+          "$ref": "#/definitions/v1Website"
+        }
+      }
+    },
+    "v1LocationData": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number",
+          "format": "float"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "float"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "administrativeArea": {
+          "type": "string"
+        },
+        "subAdministrativeArea": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "subLocality": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Organization": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Common data\n@gotags: json:\"_id,omitempty\""
+        },
+        "key": {
+          "type": "string",
+          "title": "@gotags: json:\"_key,omitempty\""
+        },
+        "rev": {
+          "type": "string",
+          "title": "@gotags: json:\"_rev,omitempty\""
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string",
+          "title": "Main Data"
+        },
+        "type": {
+          "type": "string"
+        },
+        "foundedAt": {
+          "type": "string",
+          "format": "int64",
+          "title": "Time data"
+        },
+        "discoveredAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "lastVisited": {
+          "type": "string",
+          "format": "int64"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Additional"
+        }
+      }
+    },
+    "v1Person": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Common data\n@gotags: json:\"_id,omitempty\""
+        },
+        "key": {
+          "type": "string",
+          "title": "@gotags: json:\"_key,omitempty\""
+        },
+        "rev": {
+          "type": "string",
+          "title": "@gotags: json:\"_rev,omitempty\""
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string",
+          "title": "Main Data"
+        },
+        "role": {
+          "type": "string"
+        },
+        "nationality": {
+          "type": "string"
+        },
+        "birthDate": {
+          "type": "string",
+          "format": "int64",
+          "title": "Time data"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Additional"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1Relation": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Common data\n@gotags: json:\"_id,omitempty\""
+        },
+        "key": {
+          "type": "string",
+          "title": "@gotags: json:\"_key,omitempty\""
+        },
+        "from": {
+          "type": "string",
+          "title": "@gotags: json:\"_from,omitempty\""
+        },
+        "to": {
+          "type": "string",
+          "title": "@gotags: json:\"_to,omitempty\""
+        },
+        "rev": {
+          "type": "string",
+          "title": "@gotags: json:\"_rev,omitempty\""
+        },
+        "name": {
+          "type": "string",
+          "title": "Main Data"
+        },
+        "confidence": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/v1RelationValue"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "int64",
+          "title": "Time data"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "int64"
+        }
+      }
+    },
+    "v1RelationValue": {
+      "type": "object",
+      "properties": {
+        "stringValue": {
+          "type": "string"
+        },
+        "intValue": {
+          "type": "string",
+          "format": "int64"
+        },
+        "doubleValue": {
+          "type": "number",
+          "format": "double"
+        },
+        "floatValue": {
+          "type": "number",
+          "format": "float"
+        },
+        "boolValue": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Common data\n@gotags: json:\"_id,omitempty\""
+        },
+        "key": {
+          "type": "string",
+          "title": "@gotags: json:\"_key,omitempty\""
+        },
+        "rev": {
+          "type": "string",
+          "title": "@gotags: json:\"_rev,omitempty\""
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string",
+          "title": "Main Data"
+        },
+        "url": {
+          "type": "string"
+        },
+        "rootUrl": {
+          "type": "string"
+        },
+        "reliability": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "monitoring": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "int64",
+          "title": "Time data"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Additional"
+        }
+      }
+    },
+    "v1UpdateEventResponse": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "$ref": "#/definitions/v1Event"
+        }
+      }
+    },
+    "v1UpdateOrganizationResponse": {
+      "type": "object",
+      "properties": {
+        "organization": {
+          "$ref": "#/definitions/v1Organization"
+        }
+      }
+    },
+    "v1UpdatePersonResponse": {
+      "type": "object",
+      "properties": {
+        "person": {
+          "$ref": "#/definitions/v1Person"
+        }
+      }
+    },
+    "v1UpdateRelationshipResponse": {
+      "type": "object",
+      "properties": {
+        "relationship": {
+          "$ref": "#/definitions/v1Relation"
+        }
+      }
+    },
+    "v1UpdateSourceResponse": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "$ref": "#/definitions/v1Source"
+        }
+      }
+    },
+    "v1UpdateWebsiteResponse": {
+      "type": "object",
+      "properties": {
+        "website": {
+          "$ref": "#/definitions/v1Website"
+        }
+      }
+    },
+    "v1Website": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Common data\n@gotags: json:\"_id,omitempty\""
+        },
+        "key": {
+          "type": "string",
+          "title": "@gotags: json:\"_key,omitempty\""
+        },
+        "rev": {
+          "type": "string",
+          "title": "@gotags: json:\"_rev,omitempty\""
+        },
+        "visible": {
+          "type": "boolean"
+        },
+        "url": {
+          "type": "string",
+          "title": "Main Data"
+        },
+        "domain": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "foundedAt": {
+          "type": "string",
+          "format": "int64",
+          "title": "Time data"
+        },
+        "discoveredAt": {
+          "type": "string",
+          "format": "int64"
+        },
+        "lastVisited": {
+          "type": "string",
+          "format": "int64"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Additional"
+        }
+      }
+    }
+  }
+}
