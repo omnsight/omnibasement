@@ -2,17 +2,15 @@ syntax = "proto3";
 
 package base.v1;
 
-import "model/v1/osint.proto";
 import "google/api/annotations.proto";
+import "model/v1/osint.proto";
 
 option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
 
 // SourceService provides operations for managing sources
 service SourceService {
   rpc GetSource(GetSourceRequest) returns (GetSourceResponse) {
-    option (google.api.http) = {
-      get: "/v1/sources/{key}"
-    };
+    option (google.api.http) = {get: "/v1/sources/{key}"};
   }
 
   rpc CreateSource(CreateSourceRequest) returns (CreateSourceResponse) {
@@ -30,9 +28,7 @@ service SourceService {
   }
 
   rpc DeleteSource(DeleteSourceRequest) returns (DeleteSourceResponse) {
-    option (google.api.http) = {
-      delete: "/v1/sources/{key}"
-    };
+    option (google.api.http) = {delete: "/v1/sources/{key}"};
   }
 }
 
@@ -66,5 +62,4 @@ message DeleteSourceRequest {
   string key = 1;
 }
 
-message DeleteSourceResponse {
-}
+message DeleteSourceResponse {}

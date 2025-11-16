@@ -380,7 +380,7 @@ var File_base_v1_person_service_proto protoreflect.FileDescriptor
 
 const file_base_v1_person_service_proto_rawDesc = "" +
 	"\n" +
-	"\x1cbase/v1/person_service.proto\x12\abase.v1\x1a\x14model/v1/osint.proto\x1a\x1cgoogle/api/annotations.proto\"$\n" +
+	"\x1cbase/v1/person_service.proto\x12\abase.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x14model/v1/osint.proto\"$\n" +
 	"\x10GetPersonRequest\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\"=\n" +
 	"\x11GetPersonResponse\x12(\n" +

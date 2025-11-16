@@ -8,6 +8,10 @@ Manual buf action to manage protobuf
 buf registry login buf.build
 
 buf dep update
+
+buf format -w
+buf lint
+
 buf generate
 buf push
 

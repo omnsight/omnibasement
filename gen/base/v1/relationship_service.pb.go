@@ -292,7 +292,7 @@ var File_base_v1_relationship_service_proto protoreflect.FileDescriptor
 
 const file_base_v1_relationship_service_proto_rawDesc = "" +
 	"\n" +
-	"\"base/v1/relationship_service.proto\x12\abase.v1\x1a\x14model/v1/osint.proto\x1a\x1cgoogle/api/annotations.proto\"S\n" +
+	"\"base/v1/relationship_service.proto\x12\abase.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x14model/v1/osint.proto\"S\n" +
 	"\x19CreateRelationshipRequest\x126\n" +
 	"\frelationship\x18\x01 \x01(\v2\x12.model.v1.RelationR\frelationship\"T\n" +
 	"\x1aCreateRelationshipResponse\x126\n" +

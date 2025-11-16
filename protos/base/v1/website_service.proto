@@ -2,17 +2,15 @@ syntax = "proto3";
 
 package base.v1;
 
-import "model/v1/osint.proto";
 import "google/api/annotations.proto";
+import "model/v1/osint.proto";
 
 option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
 
 // WebsiteService provides operations for managing websites
 service WebsiteService {
   rpc GetWebsite(GetWebsiteRequest) returns (GetWebsiteResponse) {
-    option (google.api.http) = {
-      get: "/v1/websites/{key}"
-    };
+    option (google.api.http) = {get: "/v1/websites/{key}"};
   }
 
   rpc CreateWebsite(CreateWebsiteRequest) returns (CreateWebsiteResponse) {
@@ -30,9 +28,7 @@ service WebsiteService {
   }
 
   rpc DeleteWebsite(DeleteWebsiteRequest) returns (DeleteWebsiteResponse) {
-    option (google.api.http) = {
-      delete: "/v1/websites/{key}"
-    };
+    option (google.api.http) = {delete: "/v1/websites/{key}"};
   }
 }
 
@@ -66,5 +62,4 @@ message DeleteWebsiteRequest {
   string key = 1;
 }
 
-message DeleteWebsiteResponse {
-}
+message DeleteWebsiteResponse {}

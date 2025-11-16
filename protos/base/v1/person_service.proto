@@ -2,17 +2,15 @@ syntax = "proto3";
 
 package base.v1;
 
-import "model/v1/osint.proto";
 import "google/api/annotations.proto";
+import "model/v1/osint.proto";
 
-option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";  
+option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
 
 // PersonService provides operations for managing persons
 service PersonService {
   rpc GetPerson(GetPersonRequest) returns (GetPersonResponse) {
-    option (google.api.http) = {
-      get: "/v1/persons/{key}"
-    };
+    option (google.api.http) = {get: "/v1/persons/{key}"};
   }
 
   rpc CreatePerson(CreatePersonRequest) returns (CreatePersonResponse) {
@@ -30,9 +28,7 @@ service PersonService {
   }
 
   rpc DeletePerson(DeletePersonRequest) returns (DeletePersonResponse) {
-    option (google.api.http) = {
-      delete: "/v1/persons/{key}"
-    };
+    option (google.api.http) = {delete: "/v1/persons/{key}"};
   }
 }
 
@@ -66,5 +62,4 @@ message DeletePersonRequest {
   string key = 1;
 }
 
-message DeletePersonResponse {
-}
+message DeletePersonResponse {}
