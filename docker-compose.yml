@@ -1,7 +1,7 @@
 services:
   arangodb:
     image: arangodb/arangodb:3.10
-    container_name: geovision_arangodb
+    container_name: test_arangodb
     environment:
       ARANGO_ROOT_PASSWORD: "0123"
     ports:

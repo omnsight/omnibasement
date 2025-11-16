@@ -31,13 +31,13 @@ jobs:
           go test -v ./...
         env:
           ARANGO_URL: http://localhost:8529
-          ARANGO_DB: geovision
+          ARANGO_DB: test
           ARANGO_USERNAME: root
           ARANGO_PASSWORD: "0123"
 
       - name: Build service
         run: |
-          go build -o geovision ./src/main.go
+          go build -o omnibasement ./src/main.go
 
       - name: Show service logs
         if: always()
