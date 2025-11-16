@@ -2,17 +2,15 @@ syntax = "proto3";
 
 package base.v1;
 
-import "model/v1/osint.proto";
 import "google/api/annotations.proto";
+import "model/v1/osint.proto";
 
 option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
 
 // OrganizationService provides operations for managing organizations
 service OrganizationService {
   rpc GetOrganization(GetOrganizationRequest) returns (GetOrganizationResponse) {
-    option (google.api.http) = {
-      get: "/v1/organizations/{key}"
-    };
+    option (google.api.http) = {get: "/v1/organizations/{key}"};
   }
 
   rpc CreateOrganization(CreateOrganizationRequest) returns (CreateOrganizationResponse) {
@@ -30,9 +28,7 @@ service OrganizationService {
   }
 
   rpc DeleteOrganization(DeleteOrganizationRequest) returns (DeleteOrganizationResponse) {
-    option (google.api.http) = {
-      delete: "/v1/organizations/{key}"
-    };
+    option (google.api.http) = {delete: "/v1/organizations/{key}"};
   }
 }
 
@@ -66,5 +62,4 @@ message DeleteOrganizationRequest {
   string key = 1;
 }
 
-message DeleteOrganizationResponse {
-}
+message DeleteOrganizationResponse {}

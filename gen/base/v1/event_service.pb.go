@@ -381,7 +381,7 @@ var File_base_v1_event_service_proto protoreflect.FileDescriptor
 
 const file_base_v1_event_service_proto_rawDesc = "" +
 	"\n" +
-	"\x1bbase/v1/event_service.proto\x12\abase.v1\x1a\x14model/v1/osint.proto\x1a\x16model/v1/related.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"#\n" +
+	"\x1bbase/v1/event_service.proto\x12\abase.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x14model/v1/osint.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"#\n" +
 	"\x0fGetEventRequest\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\"9\n" +
 	"\x10GetEventResponse\x12%\n" +

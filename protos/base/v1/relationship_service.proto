@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package base.v1;
 
-import "model/v1/osint.proto";
 import "google/api/annotations.proto";
+import "model/v1/osint.proto";
 
 option go_package = "github.com/omnsight/omnibasement/gen/base/v1;base";
 
@@ -24,9 +24,7 @@ service RelationshipService {
   }
 
   rpc DeleteRelationship(DeleteRelationshipRequest) returns (DeleteRelationshipResponse) {
-    option (google.api.http) = {
-      delete: "/v1/relationships/{id}"
-    };
+    option (google.api.http) = {delete: "/v1/relationships/{id}"};
   }
 }
 
@@ -52,5 +50,4 @@ message DeleteRelationshipRequest {
   string id = 1;
 }
 
-message DeleteRelationshipResponse {
-}
+message DeleteRelationshipResponse {}
