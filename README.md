@@ -1,5 +1,13 @@
 # Omnibasement
 
+## Development
+
+To upgrade internal dependencies:
+
+```bash
+go get github.com/omnsight/omniscent-library@<branch>
+```
+
 ## Run Locally
 
 Manual buf action to manage protobuf
