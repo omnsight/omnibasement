@@ -1,6 +1,12 @@
 # Omnibasement
 
-## Development
+placeholder
+
+## Local Development
+
+Tag is injested by a github action. Commit message including `#major`, `#minor`, `#patch`, or `#none` will bump the release and pre-release versions.
+
+### Dependencies
 
 To upgrade internal dependencies:
 
@@ -8,9 +14,7 @@ To upgrade internal dependencies:
 go get github.com/omnsight/omniscent-library@<branch>
 ```
 
-## Run Locally
-
-Manual buf action to manage protobuf
+Buf build:
 
 ```bash
 buf registry login buf.build
@@ -25,6 +29,8 @@ buf push
 
 go mod tidy
 ```
+
+### Testing
 
 Run unit tests. You can view arangodb dashboard at http://localhost:8529.
 
