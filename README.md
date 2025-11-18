@@ -11,7 +11,8 @@ Tag is injested by a github action. Commit message including `#major`, `#minor`,
 To upgrade internal dependencies:
 
 ```bash
-go get github.com/omnsight/omniscent-library@<branch>
+go clean -cache -modcache
+GOPROXY=direct go get github.com/omnsight/omniscent-library@<branch>
 ```
 
 Buf build:

@@ -3,8 +3,7 @@ name: Release & Tag
 on:
   push:
     branches:
-      - main
-      - pre-release
+      - 'main'
 
 env:
   # Use docker.io for Docker Hub if empty
